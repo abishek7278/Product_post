@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Here are all the products available now</h1>
+    <table>
+        <thead>
+            <th>Product Name</th>
+            <th>Weight in Kgs</th>
+            <th>Price in Rupees</th>
+        </thead>
+        {% if product_list %}
+            {%for prod in product_list %}
+            <tr>
+                <td>{{prod.name}}</td>
+                <td>{{prod.weight_in_kgs}}</td>
+                <td>{{prod.price_in_rupees}}</td>
+            </tr>
+            {%endfor%}
+        {% else %}
+            <h1>There are no products to display</h1>
+        {%endif%}
+    </table>
+</body>
+</html>
